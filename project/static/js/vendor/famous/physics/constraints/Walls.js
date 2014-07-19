@@ -192,8 +192,7 @@ define(function(require, exports, module) {
      * @param fn {Function}  Function that takes in a wall as its first parameter
      */
     Walls.prototype.forEach = function forEach(fn) {
-        var sides = this.options.sides;
-        for (var key in this.sides) fn(sides[key], key);
+        for (var key in this.sides) fn(this.sides[key], key);
     };
 
     /**

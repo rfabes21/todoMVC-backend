@@ -6,10 +6,11 @@ var tests = [
     // ---------------------------
     // Load Specs (AKA tests)
     'tests/spec-app',
+    'tests/todo-model'
 ];
 
 requirejs.config({
-    baseUrl: '/base/project/static/js',
+    baseUrl: '/base/src/static/js',
 
     paths:{
         'tests': 'specs',

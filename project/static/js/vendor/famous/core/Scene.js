@@ -18,7 +18,7 @@ define(function(require, exports, module) {
      *
      * @class Scene
      * @constructor
-     * @param {Object|Array|Spec} definition in the format of a render spec.
+     * @param {Object} definition in the format of a render spec.
      */
     function Scene(definition) {
         this.id = null;
@@ -70,7 +70,6 @@ define(function(require, exports, module) {
         var transformDefinition = definition.transform;
         var opacity = definition.opacity;
         var origin = definition.origin;
-        var align = definition.align;
         var size = definition.size;
         var transform = Transform.identity;
         if (transformDefinition instanceof Array) {
@@ -91,7 +90,6 @@ define(function(require, exports, module) {
             transform: transform,
             opacity: opacity,
             origin: origin,
-            align: align,
             size: size
         });
         return result;

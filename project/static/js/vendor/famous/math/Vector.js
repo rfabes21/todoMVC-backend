@@ -308,8 +308,7 @@ define(function(require, exports, module) {
      */
 
     Vector.prototype.put = function put(v) {
-        if (this === _register) _setFromVector.call(v, _register);
-        else _setFromVector.call(v, this);
+        _setFromVector.call(v, _register);
     };
 
     /**
