@@ -1,16 +1,20 @@
 from django.conf import settings
 from django.conf.urls import include, patterns, url
-from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
+from tastypie.api import Api
+from todo.api import TodoItemResource
+
 
 admin.autodiscover()
+v1_api = Api(api_name='v1')
+v1_api.register(TodoItemResource())
 
 urlpatterns = patterns(
     '',
     (r'^grappelli/', include('grappelli.urls')),
     (r'^admin/', include(admin.site.urls)),
+    (r'^api/', include(v1_api.urls)),
 
     # Homepage
     (r'^$', TemplateView.as_view(template_name='index.html')),
