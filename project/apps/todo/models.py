@@ -6,4 +6,4 @@ class TodoItem(models.Model):
     completed = models.BooleanField(default=False, verbose_name='completed')
 
     def __unicode__(self):
-        return self.title
+        return self.label
